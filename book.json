@@ -1,0 +1,13 @@
+{
+    "title": "软件设计哲学",
+    "author": "John Ousterhout",
+    "description": "书中讨论了软件设计的主题：如何将复杂的软件系统分解成可以相对独立实现的模块(如类和方法)",
+    "language": "zh-hans",
+    "pluginsConfig": {
+    },
+    "plugins": [
+        "back-to-top-button",
+        "expandable-chapters-small",
+        "page-toc-button"
+    ]
+}
