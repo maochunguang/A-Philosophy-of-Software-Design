@@ -1,0 +1,777 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第十四章: 选择的名字 · 软件设计哲学</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="John Ousterhout">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ch15.html" />
+    
+    
+    <link rel="prev" href="ch13.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    首页
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="preface">
+            
+                <span>
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ch1.html">
+            
+                <a href="ch1.html">
+            
+                    
+                    第一章：介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ch2.html">
+            
+                <a href="ch2.html">
+            
+                    
+                    第二章：复杂性的本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ch3.html">
+            
+                <a href="ch3.html">
+            
+                    
+                    第三章：工作代码是不够的（战略与战术编程）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ch4.html">
+            
+                <a href="ch4.html">
+            
+                    
+                    第四章：模块应该是深的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ch5.html">
+            
+                <a href="ch5.html">
+            
+                    
+                    第五章：信息隐藏(和泄露)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ch6.html">
+            
+                <a href="ch6.html">
+            
+                    
+                    第六章：通用模块更深入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="ch7.html">
+            
+                <a href="ch7.html">
+            
+                    
+                    第七章: 不同的层，不同的抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ch8.html">
+            
+                <a href="ch8.html">
+            
+                    
+                    第八章: 降低复杂性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="ch9.html">
+            
+                <a href="ch9.html">
+            
+                    
+                    第九章: 在一起更好还是分开更好？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="ch10.html">
+            
+                <a href="ch10.html">
+            
+                    
+                    第十章: 定义不存在的错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="ch11.html">
+            
+                <a href="ch11.html">
+            
+                    
+                    第十一章: 设计它两次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="ch12.html">
+            
+                <a href="ch12.html">
+            
+                    
+                    第十二章: 为什么写注释？四个理由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="ch13.html">
+            
+                <a href="ch13.html">
+            
+                    
+                    第十三章: 注释应该描述代码中不明显的内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="ch14.html">
+            
+                <a href="ch14.html">
+            
+                    
+                    第十四章: 选择的名字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="ch15.html">
+            
+                <a href="ch15.html">
+            
+                    
+                    第十五章: 先写注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="ch16.html">
+            
+                <a href="ch16.html">
+            
+                    
+                    第十六章: 修改现有的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="ch17.html">
+            
+                <a href="ch17.html">
+            
+                    
+                    第十七章: 一致性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="ch18.html">
+            
+                <a href="ch18.html">
+            
+                    
+                    第十八章: 代码应该是显而易见的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="ch19.html">
+            
+                <a href="ch19.html">
+            
+                    
+                    第十九章: 软件发展趋势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="ch20.html">
+            
+                <a href="ch20.html">
+            
+                    
+                    第二十章: 设计性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="ch21.html">
+            
+                <a href="ch21.html">
+            
+                    
+                    第二十一章: 结论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第十四章: 选择的名字</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-14-&#x7AE0;-&#x9009;&#x62E9;&#x7684;&#x540D;&#x5B57;">&#x7B2C; 14 &#x7AE0; &#x9009;&#x62E9;&#x7684;&#x540D;&#x5B57;</h1>
+<blockquote>
+<p>Chapter 14 Choosing Names</p>
+</blockquote>
+<p>Selecting names for variables, methods, and other entities is one of the most underrated aspects of software design. Good names are a form of documentation: they make code easier to understand. They reduce the need for other documentation and make it easier to detect errors. Conversely, poor name choices increase the complexity of code and create ambiguities and misunderstandings that can result in bugs. Name choice is an example of the principle that complexity is incremental. Choosing a mediocre name for a particular variable, as opposed to the best possible name, probably won&#x2019;t have much impact on the overall complexity of a system. However, software systems have thousands of variables; choosing good names for all of these will have a significant impact on complexity and manageability.</p>
+<blockquote>
+<p>&#x4E3A;&#x53D8;&#x91CF;&#xFF0C;&#x65B9;&#x6CD5;&#x548C;&#x5176;&#x4ED6;&#x5B9E;&#x4F53;&#x9009;&#x62E9;&#x540D;&#x79F0;&#x662F;&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;&#x4E2D;&#x88AB;&#x4F4E;&#x4F30;&#x7684;&#x65B9;&#x9762;&#x4E4B;&#x4E00;&#x3002;&#x826F;&#x597D;&#x7684;&#x540D;&#x5B57;&#x662F;&#x4E00;&#x79CD;&#x6587;&#x6863;&#x5F62;&#x5F0F;&#xFF1A;&#x5B83;&#x4EEC;&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x3002;&#x5B83;&#x4EEC;&#x51CF;&#x5C11;&#x4E86;&#x5BF9;&#x5176;&#x4ED6;&#x6587;&#x6863;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5E76;&#x4F7F;&#x68C0;&#x6D4B;&#x9519;&#x8BEF;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x540D;&#x79F0;&#x9009;&#x62E9;&#x4E0D;&#x5F53;&#x4F1A;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x5E76;&#x9020;&#x6210;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x7684;&#x6B67;&#x4E49;&#x548C;&#x8BEF;&#x89E3;&#x3002;&#x540D;&#x79F0;&#x9009;&#x62E9;&#x662F;&#x590D;&#x6742;&#x5EA6;&#x662F;&#x9012;&#x589E;&#x7684;&#x539F;&#x7406;&#x7684;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x3002;&#x4E3A;&#x7279;&#x5B9A;&#x53D8;&#x91CF;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5E73;&#x5EB8;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6700;&#x597D;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x5BF9;&#x7CFB;&#x7EDF;&#x7684;&#x6574;&#x4F53;&#x590D;&#x6742;&#x6027;&#x4EA7;&#x751F;&#x592A;&#x5927;&#x5F71;&#x54CD;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8F6F;&#x4EF6;&#x7CFB;&#x7EDF;&#x5177;&#x6709;&#x6570;&#x5343;&#x4E2A;&#x53D8;&#x91CF;&#x3002;&#x4E3A;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#x5C06;&#x5BF9;&#x590D;&#x6742;&#x6027;&#x548C;&#x53EF;&#x7BA1;&#x7406;&#x6027;&#x4EA7;&#x751F;&#x91CD;&#x5927;&#x5F71;&#x54CD;&#x3002;</p>
+</blockquote>
+<h2 id="141-example-bad-names-cause-bugs-&#x793A;&#x4F8B;&#xFF1A;&#x540D;&#x79F0;&#x9519;&#x8BEF;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;">14.1 Example: bad names cause bugs &#x793A;&#x4F8B;&#xFF1A;&#x540D;&#x79F0;&#x9519;&#x8BEF;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;</h2>
+<p>Sometimes even a single poorly named variable can have severe consequences. The most challenging bug I ever fixed came about because of a poor name choice. In the late 1980&#x2019;s and early 1990&#x2019;s my graduate students and I created a distributed operating system called Sprite. At some point we noticed that files would occasionally lose data: one of the data blocks suddenly became all zeroes, even though the file had not been modified by a user. The problem didn&#x2019;t happen very often, so it was exceptionally difficult to track down. A few of the graduate students tried to find the bug, but they were unable to make progress and eventually gave up. However, I consider any unsolved bug to be an intolerable personal insult, so I decided to track it down.</p>
+<blockquote>
+<p>&#x6709;&#x65F6;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x53D8;&#x91CF;&#x4E5F;&#x4F1A;&#x4EA7;&#x751F;&#x4E25;&#x91CD;&#x7684;&#x540E;&#x679C;&#x3002;&#x6211;&#x66FE;&#x7ECF;&#x4FEE;&#x590D;&#x8FC7;&#x7684;&#x6700;&#x5177;&#x6311;&#x6218;&#x6027;&#x7684;&#x9519;&#x8BEF;&#x662F;&#x7531;&#x4E8E;&#x540D;&#x79F0;&#x9009;&#x62E9;&#x4E0D;&#x5F53;&#x9020;&#x6210;&#x7684;&#x3002;&#x5728; 1980 &#x5E74;&#x4EE3;&#x672B;&#x548C; 1990 &#x5E74;&#x4EE3;&#x521D;&#xFF0C;&#x6211;&#x7684;&#x7814;&#x7A76;&#x751F;&#x548C;&#x6211;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; Sprite &#x7684;&#x5206;&#x5E03;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x6CE8;&#x610F;&#x5230;&#x6587;&#x4EF6;&#x5076;&#x5C14;&#x4F1A;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF1A;&#x5373;&#x4F7F;&#x7528;&#x6237;&#x672A;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#xFF0C;&#x6570;&#x636E;&#x5757;&#x4E4B;&#x4E00;&#x7A81;&#x7136;&#x53D8;&#x4E3A;&#x5168;&#x96F6;&#x3002;&#x8BE5;&#x95EE;&#x9898;&#x5E76;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#xFF0C;&#x56E0;&#x6B64;&#x5F88;&#x96BE;&#x8FFD;&#x8E2A;&#x3002;&#x4E00;&#x4E9B;&#x7814;&#x7A76;&#x751F;&#x8BD5;&#x56FE;&#x627E;&#x5230;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x672A;&#x80FD;&#x53D6;&#x5F97;&#x8FDB;&#x5C55;&#xFF0C;&#x6700;&#x7EC8;&#x653E;&#x5F03;&#x4E86;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x8BA4;&#x4E3A;&#x4EFB;&#x4F55;&#x672A;&#x89E3;&#x51B3;&#x7684;&#x9519;&#x8BEF;&#x90FD;&#x662F;&#x65E0;&#x6CD5;&#x5FCD;&#x53D7;&#x7684;&#x4E2A;&#x4EBA;&#x4FAE;&#x8FB1;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x51B3;&#x5B9A;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#x3002;</p>
+</blockquote>
+<p>It took six months, but I eventually found and fixed the bug. The problem was actually quite simple (as are most bugs, once you figure them out). The file system code used the variable name block for two different purposes. In some situations, block referred to a physical block number on disk; in other situations, block referred to a logical block number within a file. Unfortunately, at one point in the code there was a block variable containing a logical block number, but it was accidentally used in a context where a physical block number was needed; as a result, an unrelated block on disk got overwritten with zeroes.</p>
+<blockquote>
+<p>&#x82B1;&#x4E86;&#x516D;&#x4E2A;&#x6708;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x6211;&#x6700;&#x7EC8;&#x627E;&#x5230;&#x5E76;&#x4FEE;&#x590D;&#x4E86;&#x8BE5;&#x9519;&#x8BEF;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5B9E;&#x9645;&#x4E0A;&#x5F88;&#x7B80;&#x5355;&#xFF08;&#x5C31;&#x50CF;&#x5927;&#x591A;&#x6570;&#x9519;&#x8BEF;&#x4E00;&#x6837;&#xFF0C;&#x4E00;&#x65E6;&#x627E;&#x51FA;&#x5B83;&#x4EEC;&#xFF09;&#x3002;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4EE3;&#x7801;&#x5C06;&#x53D8;&#x91CF;&#x540D;&#x5757;&#x7528;&#x4E8E;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x7684;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5757;&#x662F;&#x6307;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x7269;&#x7406;&#x5757;&#x53F7;&#x3002;&#x5728;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5757;&#x662F;&#x6307;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x903B;&#x8F91;&#x5757;&#x53F7;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x7684;&#x67D0;&#x4E00;&#x70B9;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x903B;&#x8F91;&#x5757;&#x53F7;&#x7684;&#x5757;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x9700;&#x8981;&#x7269;&#x7406;&#x5757;&#x53F7;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x610F;&#x5916;&#x5730;&#x4F7F;&#x7528;&#x4E86;&#x5B83;&#x3002;&#x7ED3;&#x679C;&#xFF0C;&#x78C1;&#x76D8;&#x4E0A;&#x65E0;&#x5173;&#x7684;&#x5757;&#x88AB;&#x96F6;&#x8986;&#x76D6;&#x3002;</p>
+</blockquote>
+<p>While tracking down the bug, several people, including myself, read over the faulty code, but we never noticed the problem. When we saw the variable block used as a physical block number, we reflexively assumed that it really held a physical block number. It took a long process of instrumentation, which eventually showed that the corruption must be happening in a particular statement, before I was able to get past the mental block created by the name and check to see exactly where its value came from. If different variable names had been used for the different kinds of blocks, such as fileBlock and diskBlock, it&#x2019;s unlikely that the error would have happened; the programmer would have known that fileBlock couldn&#x2019;t be used in that situation.</p>
+<blockquote>
+<p>&#x5728;&#x8DDF;&#x8E2A;&#x8BE5;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5305;&#x62EC;&#x6211;&#x81EA;&#x5DF1;&#x5728;&#x5185;&#x7684;&#x51E0;&#x4E2A;&#x4EBA;&#x9605;&#x8BFB;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x4ECE;&#x672A;&#x6CE8;&#x610F;&#x5230;&#x95EE;&#x9898;&#x6240;&#x5728;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x53EF;&#x53D8;&#x5757;&#x7528;&#x4F5C;&#x7269;&#x7406;&#x5757;&#x53F7;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53CD;&#x8EAB;&#x5730;&#x5047;&#x8BBE;&#x5B83;&#x786E;&#x5B9E;&#x62E5;&#x6709;&#x7269;&#x7406;&#x5757;&#x53F7;&#x3002;&#x7ECF;&#x8FC7;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x7684;&#x68C0;&#x6D4B;&#xFF0C;&#x6700;&#x7EC8;&#x663E;&#x793A;&#x51FA;&#x8150;&#x8D25;&#x4E00;&#x5B9A;&#x662F;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x8BED;&#x53E5;&#x4E2D;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x624D;&#x80FD;&#x8D8A;&#x8FC7;&#x8BE5;&#x540D;&#x79F0;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x601D;&#x7EF4;&#x969C;&#x788D;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x5176;&#x4EF7;&#x503C;&#x7684;&#x786E;&#x5207;&#x6765;&#x6E90;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x7684;&#x5757;&#xFF08;&#x4F8B;&#x5982; fileBlock &#x548C; diskBlock&#xFF09;&#x4F7F;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x5219;&#x9519;&#x8BEF;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#xFF1B;&#x7A0B;&#x5E8F;&#x5458;&#x4F1A;&#x77E5;&#x9053;&#x5728;&#x90A3;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; fileBlock&#x3002;</p>
+</blockquote>
+<p>Unfortunately, most developers don&#x2019;t spend much time thinking about names. They tend to use the first name that comes to mind, as long as it&#x2019;s reasonably close to matching the thing it names. For example, block is a pretty close match for both a physical block on disk and a logical block within a file; it&#x2019;s certainly not a horrible name. Even so, it resulted in a huge expenditure of time to track down a subtle bug. Thus, you shouldn&#x2019;t settle for names that are just &#x201C;reasonably close&#x201D;. Take a bit of extra time to choose great names, which are precise, unambiguous, and intuitive. The extra attention will pay for itself quickly, and over time you&#x2019;ll learn to choose good names quickly.</p>
+<blockquote>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6CA1;&#x6709;&#x82B1;&#x592A;&#x591A;&#x65F6;&#x95F4;&#x5728;&#x601D;&#x8003;&#x540D;&#x5B57;&#x3002;&#x4ED6;&#x4EEC;&#x503E;&#x5411;&#x4E8E;&#x4F7F;&#x7528;&#x60F3;&#x5230;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4E0E;&#x5339;&#x914D;&#x7684;&#x540D;&#x5B57;&#x76F8;&#x5F53;&#x63A5;&#x8FD1;&#x5373;&#x53EF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5757;&#x4E0E;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x7269;&#x7406;&#x5757;&#x548C;&#x6587;&#x4EF6;&#x5185;&#x7684;&#x903B;&#x8F91;&#x5757;&#x975E;&#x5E38;&#x63A5;&#x8FD1;&#xFF1B;&#x8FD9;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6015;&#x7684;&#x540D;&#x5B57;&#x3002;&#x5373;&#x4F7F;&#x8FD9;&#x6837;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x8981;&#x82B1;&#x8D39;&#x5927;&#x91CF;&#x65F6;&#x95F4;&#x6765;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x7EC6;&#x5FAE;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x60A8;&#x4E0D;&#x5E94;&#x8BE5;&#x53EA;&#x9009;&#x62E9;&#x201C;&#x5408;&#x7406;&#x63A5;&#x8FD1;&#x201D;&#x7684;&#x540D;&#x79F0;&#x3002;&#x82B1;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x9009;&#x62E9;&#x51C6;&#x786E;&#xFF0C;&#x660E;&#x786E;&#x4E14;&#x76F4;&#x89C2;&#x7684;&#x597D;&#x540D;&#x5B57;&#x3002;&#x989D;&#x5916;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x5C06;&#x5F88;&#x5FEB;&#x6536;&#x56DE;&#x6210;&#x672C;&#xFF0C;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x6D41;&#x901D;&#xFF0C;&#x60A8;&#x5C06;&#x5B66;&#x4F1A;&#x5FEB;&#x901F;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#x3002;</p>
+</blockquote>
+<h2 id="142-create-an-image-&#x521B;&#x5EFA;&#x56FE;&#x50CF;">14.2 Create an image &#x521B;&#x5EFA;&#x56FE;&#x50CF;</h2>
+<p>When choosing a name, the goal is to create an image in the mind of the reader about the nature of the thing being named. A good name conveys a lot of information about what the underlying entity is, and, just as important, what it is not. When considering a particular name, ask yourself: &#x201C;If someone sees this name in isolation, without seeing its declaration, its documentation, or any code that uses the name, how closely will they be able to guess what the name refers to? Is there some other name that will paint a clearer picture?&#x201D; Of course, there is a limit to how much information you can put in a single name; names become unwieldy if they contain more than two or three words. Thus, the challenge is to find just a few words that capture the most important aspects of the entity.</p>
+<blockquote>
+<p>&#x9009;&#x62E9;&#x540D;&#x79F0;&#x65F6;&#xFF0C;&#x76EE;&#x6807;&#x662F;&#x5728;&#x8BFB;&#x8005;&#x7684;&#x8111;&#x6D77;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x5E45;&#x5173;&#x4E8E;&#x88AB;&#x547D;&#x540D;&#x4E8B;&#x7269;&#x7684;&#x6027;&#x8D28;&#x7684;&#x56FE;&#x50CF;&#x3002;&#x4E00;&#x4E2A;&#x597D;&#x540D;&#x5B57;&#x4F20;&#x8FBE;&#x4E86;&#x5F88;&#x591A;&#x6709;&#x5173;&#x5E95;&#x5C42;&#x5B9E;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x4EE5;&#x53CA;&#x540C;&#x6837;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5728;&#x8003;&#x8651;&#x7279;&#x5B9A;&#x540D;&#x79F0;&#x65F6;&#xFF0C;&#x8BF7;&#x95EE;&#x81EA;&#x5DF1;&#xFF1A;&#x201C;&#x5982;&#x679C;&#x6709;&#x4EBA;&#x5B64;&#x7ACB;&#x5730;&#x770B;&#x5230;&#x8BE5;&#x540D;&#x79F0;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x5176;&#x58F0;&#x660E;&#xFF0C;&#x6587;&#x6863;&#x6216;&#x4F7F;&#x7528;&#x8BE5;&#x540D;&#x79F0;&#x7684;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C06;&#x80FD;&#x591F;&#x731C;&#x5230;&#x8BE5;&#x540D;&#x79F0;&#x6307;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x4F7F;&#x753B;&#x9762;&#x66F4;&#x6E05;&#x6670;&#x5417;&#xFF1F;&#x201D; &#x5F53;&#x7136;&#xFF0C;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x591A;&#x5C11;&#x4FE1;&#x606F;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#x3002;&#x5982;&#x679C;&#x540D;&#x79F0;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x6216;&#x4E09;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x5219;&#x4F1A;&#x53D8;&#x5F97;&#x7B28;&#x62D9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9762;&#x4E34;&#x7684;&#x6311;&#x6218;&#x662F;&#x4EC5;&#x627E;&#x5230;&#x6355;&#x83B7;&#x5B9E;&#x4F53;&#x6700;&#x91CD;&#x8981;&#x65B9;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x5355;&#x8BCD;&#x3002;</p>
+</blockquote>
+<p>Names are a form of abstraction: they provide a simplified way of thinking about a more complex underlying entity. Like other forms of abstraction, the best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important.</p>
+<blockquote>
+<p>&#x540D;&#x79F0;&#x662F;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#x5F62;&#x5F0F;&#xFF1A;&#x540D;&#x79F0;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8003;&#x8651;&#x66F4;&#x590D;&#x6742;&#x7684;&#x57FA;&#x7840;&#x5B9E;&#x4F53;&#x3002;&#x50CF;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;&#x7684;&#x62BD;&#x8C61;&#x4E00;&#x6837;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x540D;&#x5B57;&#x662F;&#x90A3;&#x4E9B;&#x5C06;&#x6CE8;&#x610F;&#x529B;&#x96C6;&#x4E2D;&#x5728;&#x5BF9;&#x5E95;&#x5C42;&#x5B9E;&#x4F53;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E1C;&#x897F;&#x4E0A;&#xFF0C;&#x800C;&#x5FFD;&#x7565;&#x90A3;&#x4E9B;&#x6B21;&#x8981;&#x7684;&#x7EC6;&#x8282;&#x3002;</p>
+</blockquote>
+<h2 id="143-names-should-be-precise-&#x540D;&#x79F0;&#x5E94;&#x51C6;&#x786E;">14.3 Names should be precise &#x540D;&#x79F0;&#x5E94;&#x51C6;&#x786E;</h2>
+<p>Good names have two properties: precision and consistency. Let&#x2019;s start with precision. The most common problem with names is that they are too generic or vague; as a result, it&#x2019;s hard for readers to tell what the name refers to; the reader may assume that the name refers to something different from reality, as in the block bug above. Consider the following method declaration:</p>
+<blockquote>
+<p>&#x826F;&#x597D;&#x540D;&#x79F0;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;&#x7CBE;&#x5EA6;&#x548C;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x7CBE;&#x5EA6;&#x5F00;&#x59CB;&#x3002;&#x540D;&#x79F0;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x95EE;&#x9898;&#x662F;&#x540D;&#x79F0;&#x592A;&#x7B3C;&#x7EDF;&#x6216;&#x542B;&#x7CCA;&#x4E0D;&#x6E05;&#x3002;&#x7ED3;&#x679C;&#xFF0C;&#x8BFB;&#x8005;&#x5F88;&#x96BE;&#x8BF4;&#x51FA;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x6307;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x8BFB;&#x8005;&#x53EF;&#x80FD;&#x4F1A;&#x8BA4;&#x4E3A;&#x8BE5;&#x540D;&#x79F0;&#x6240;&#x6307;&#x7684;&#x662F;&#x4E0E;&#x73B0;&#x5B9E;&#x4E0D;&#x7B26;&#x7684;&#x4E8B;&#x7269;&#xFF0C;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x9519;&#x8BEF;&#x6240;&#x793A;&#x3002;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Returns the total number of indexlets this object is managing.
+ */</span>
+<span class="hljs-keyword">int</span> IndexletManager::getCount() {...}
+</code></pre>
+<p>The term &#x201C;count&#x201D; is too generic: count of what? If someone sees an invocation of this method, they are unlikely to know what it does unless they read its documentation. A more precise name like getActiveIndexlets or numIndexlets would be better: with one of these names, readers will probably be able to guess what the method returns without having to look at its documentation.</p>
+<blockquote>
+<p>&#x672F;&#x8BED;&#x201C;&#x8BA1;&#x6570;&#x201D;&#x592A;&#x7B3C;&#x7EDF;&#x4E86;&#xFF1A;&#x8BA1;&#x6570;&#x4EC0;&#x4E48;&#xFF1F;&#x5982;&#x679C;&#x6709;&#x4EBA;&#x770B;&#x5230;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x9664;&#x975E;&#x4ED6;&#x4EEC;&#x9605;&#x8BFB;&#x4E86;&#x5B83;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x5426;&#x5219;&#x4ED6;&#x4EEC;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x77E5;&#x9053;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x3002;&#x50CF; getActiveIndexlets &#x6216; numIndexlets &#x8FD9;&#x6837;&#x7684;&#x66F4;&#x7CBE;&#x786E;&#x7684;&#x540D;&#x79F0;&#x4F1A;&#x66F4;&#x597D;&#xFF1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x540D;&#x79F0;&#x4E4B;&#x4E00;&#xFF0C;&#x8BFB;&#x8005;&#x53EF;&#x80FD;&#x65E0;&#x9700;&#x67E5;&#x770B;&#x5176;&#x6587;&#x6863;&#x5C31;&#x80FD;&#x731C;&#x6D4B;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</blockquote>
+<p>Here are some other examples of names that aren&#x2019;t precise enough, taken from various student projects:</p>
+<blockquote>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x6765;&#x81EA;&#x5176;&#x4ED6;&#x5B66;&#x751F;&#x9879;&#x76EE;&#x7684;&#x4E00;&#x4E9B;&#x540D;&#x79F0;&#x4E0D;&#x591F;&#x7CBE;&#x786E;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+</blockquote>
+<ul>
+<li>A project building a GUI text editor used the names x and y to refer to the position of a character in the file. These names are too generic. They could mean many things; for example, they might also represent the coordinates (in pixels) of a character on the screen. Someone seeing the name x in isolation is unlikely to think that it refers to the position of a character within a line of text. The code would be clearer if it used names such as charIndex and lineIndex, which reflect the specific abstractions that the code implements.<blockquote>
+<p>&#x5EFA;&#x7ACB; GUI &#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x540D;&#x79F0; x &#x548C; y &#x6765;&#x5F15;&#x7528;&#x5B57;&#x7B26;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x4E9B;&#x540D;&#x79F0;&#x592A;&#x7B3C;&#x7EDF;&#x4E86;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x610F;&#x5473;&#x7740;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#xFF1B;&#x4F8B;&#x5982;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x53EF;&#x80FD;&#x4EE3;&#x8868;&#x5C4F;&#x5E55;&#x4E0A;&#x5B57;&#x7B26;&#x7684;&#x5750;&#x6807;&#xFF08;&#x4EE5;&#x50CF;&#x7D20;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#x3002;&#x5355;&#x72EC;&#x770B;&#x5230;&#x540D;&#x79F0; x &#x7684;&#x4EBA;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x4F1A;&#x8BA4;&#x4E3A;&#x5B83;&#x662F;&#x6307;&#x5B57;&#x7B26;&#x5728;&#x4E00;&#x884C;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x8BF8;&#x5982; charIndex &#x548C; lineIndex &#x4E4B;&#x7C7B;&#x7684;&#x540D;&#x79F0;&#x6765;&#x53CD;&#x6620;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x7684;&#x7279;&#x5B9A;&#x62BD;&#x8C61;&#xFF0C;&#x8BE5;&#x4EE3;&#x7801;&#x5C06;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>Another editor project contained the following code:</p>
+<blockquote>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x7F16;&#x8F91;&#x5668;&#x9879;&#x76EE;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">// Blink state: true when cursor visible.</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> blinkStatus = <span class="hljs-keyword">true</span>;
+</code></pre>
+<p>The name blinkStatus doesn&#x2019;t convey enough information. The word &#x201C;status&#x201D; is too vague for a boolean value: it gives no clue about what a true or false value means. The word &#x201C;blink&#x201D; is also vague, since it doesn&#x2019;t indicate what is blinking. The following alternative is better:</p>
+<blockquote>
+<p>&#x540D;&#x79F0; blinkStatus &#x65E0;&#x6CD5;&#x4F20;&#x8FBE;&#x8DB3;&#x591F;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x201C;&#x72B6;&#x6001;&#x201D;&#x4E00;&#x8BCD;&#x5BF9;&#x4E8E;&#x5E03;&#x5C14;&#x503C;&#x6765;&#x8BF4;&#x592A;&#x542B;&#x7CCA;&#x4E86;&#xFF1A;&#x5B83;&#x4E0D;&#x63D0;&#x4F9B;&#x5173;&#x4E8E;&#x771F;&#x503C;&#x6216;&#x5047;&#x503C;&#x542B;&#x4E49;&#x7684;&#x4EFB;&#x4F55;&#x7EBF;&#x7D22;&#x3002;&#x201C;&#x95EA;&#x70C1;&#x201D;&#x4E00;&#x8BCD;&#x4E5F;&#x542B;&#x7CCA;&#x4E0D;&#x6E05;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5E76;&#x4E0D;&#x8868;&#x793A;&#x95EA;&#x70C1;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x4EE5;&#x4E0B;&#x66FF;&#x4EE3;&#x65B9;&#x6CD5;&#x66F4;&#x597D;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">// Controls cursor blinking: true means the cursor is visible,</span>
+<span class="hljs-comment">// false means the cursor is not displayed.</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> cursorVisible = <span class="hljs-keyword">true</span>;
+</code></pre>
+<p>The name cursorVisible conveys more information; for example, it allows readers to guess what a true value means (as a general rule, names of boolean variables should always be predicates). The word &#x201C;blink&#x201D; is no longer in the name, so readers will have to consult the documentation if they want to know why the cursor isn&#x2019;t always visible; this information is less important.</p>
+<blockquote>
+<p>&#x540D;&#x79F0; cursorVisible &#x4F20;&#x8FBE;&#x4E86;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1B;&#x4F8B;&#x5982;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x8BFB;&#x8005;&#x731C;&#x6D4B;&#x4E00;&#x4E2A;&#x771F;&#x503C;&#x7684;&#x542B;&#x4E49;&#xFF08;&#x901A;&#x5E38;&#xFF0C;&#x5E03;&#x5C14;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#x5E94;&#x59CB;&#x7EC8;&#x4E3A;&#x8C13;&#x8BCD;&#xFF09;&#x3002;&#x540D;&#x79F0;&#x4E2D;&#x4E0D;&#x518D;&#x5305;&#x542B;&#x201C; blink&#x201D;&#x4E00;&#x8BCD;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8BFB;&#x8005;&#x60F3;&#x77E5;&#x9053;&#x4E3A;&#x4EC0;&#x4E48;&#x5149;&#x6807;&#x4E0D;&#x603B;&#x662F;&#x53EF;&#x89C1;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x67E5;&#x9605;&#x6587;&#x6863;&#x3002;&#x6B64;&#x4FE1;&#x606F;&#x4E0D;&#x592A;&#x91CD;&#x8981;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>A project implementing a consensus protocol contained the following code:</p>
+<blockquote>
+<p>&#x4E00;&#x4E2A;&#x5B9E;&#x65BD;&#x5171;&#x8BC6;&#x534F;&#x8BAE;&#x7684;&#x9879;&#x76EE;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">// Value representing that the server has not voted (yet) for</span>
+<span class="hljs-comment">// anyone for the current election term.</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String VOTED_FOR_SENTINEL_VALUE = <span class="hljs-string">&quot;null&quot;</span>;
+</code></pre>
+<p>The name for this value indicates that it&#x2019;s special but it doesn&#x2019;t say what the special meaning is. A more specific name such as NOT_YET_VOTED would be better.</p>
+<blockquote>
+<p>&#x6B64;&#x503C;&#x7684;&#x540D;&#x79F0;&#x8868;&#x793A;&#x5B83;&#x662F;&#x7279;&#x6B8A;&#x7684;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x8BF4;&#x660E;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x4F7F;&#x7528;&#x66F4;&#x5177;&#x4F53;&#x7684;&#x540D;&#x79F0;&#xFF08;&#x4F8B;&#x5982; NOT_YET_VOTED&#xFF09;&#x4F1A;&#x66F4;&#x597D;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>A variable named result was used in a method with no return value. This name has multiple problems. First, it creates the misleading impression that it will be the return value of the method. Second, it provides essentially no information about what it actually holds, except that it is some computed value. The name should provide information about what the result actually is, such as mergedLine or totalChars. In methods that do actually have return values, then using the name result is reasonable. This name is still a bit generic, but readers can look at the method documentation to see its meaning, and it&#x2019;s helpful to know that the value will eventually become the return value.</p>
+<blockquote>
+<p>&#x5728;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x540D;&#x4E3A; result &#x7684;&#x53D8;&#x91CF;&#x3002;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x6709;&#x591A;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x8BEF;&#x5BFC;&#x6027;&#x7684;&#x5370;&#x8C61;&#xFF0C;&#x5373;&#x5B83;&#x5C06;&#x4F5C;&#x4E3A;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x9664;&#x4E86;&#x5B83;&#x662F;&#x4E00;&#x4E9B;&#x8BA1;&#x7B97;&#x503C;&#x5916;&#xFF0C;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x5176;&#x5B9E;&#x9645;&#x6301;&#x6709;&#x5185;&#x5BB9;&#x7684;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;&#x8BE5;&#x540D;&#x79F0;&#x5E94;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x5B9E;&#x9645;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982; mergedLine &#x6216; totalChars&#x3002;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x786E;&#x5B9E;&#x5177;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x540D;&#x79F0;&#x7ED3;&#x679C;&#x662F;&#x5408;&#x7406;&#x7684;&#x3002;&#x8BE5;&#x540D;&#x79F0;&#x4ECD;&#x7136;&#x6709;&#x70B9;&#x901A;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x65B9;&#x6CD5;&#x6587;&#x6863;&#x4EE5;&#x4E86;&#x89E3;&#x5176;&#x542B;&#x4E49;&#xFF0C;&#x8FD9;&#x6709;&#x52A9;&#x4E8E;&#x77E5;&#x9053;&#x8BE5;&#x503C;&#x6700;&#x7EC8;&#x5C06;&#x6210;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<p>img Red Flag: Vague Name img</p>
+<p>If a variable or method name is broad enough to refer to many different things, then it doesn&#x2019;t convey much information to the developer and the underlying entity is more likely to be misused.</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x53D8;&#x91CF;&#x6216;&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;&#x8DB3;&#x591F;&#x5E7F;&#x6CDB;&#xFF0C;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x7269;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4E0D;&#x4F1A;&#x5411;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4F20;&#x8FBE;&#x592A;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x56E0;&#x6B64;&#x5E95;&#x5C42;&#x5B9E;&#x4F53;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x6EE5;&#x7528;&#x3002;</p>
+</blockquote>
+<p>Like all rules, the rule about choosing precise names has a few exceptions. For example, it&#x2019;s fine to use generic names like i and j as loop iteration variables, as long as the loops only span a few lines of code. If you can see the entire range of usage of a variable, then the meaning of the variable will probably be obvious from the code so you don&#x2019;t need a long name. For example, consider the following code:</p>
+<blockquote>
+<p>&#x50CF;&#x6240;&#x6709;&#x89C4;&#x5219;&#x4E00;&#x6837;&#xFF0C;&#x6709;&#x5173;&#x9009;&#x62E9;&#x7CBE;&#x786E;&#x540D;&#x79F0;&#x7684;&#x89C4;&#x5219;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x4F8B;&#x5916;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EA;&#x8981;&#x5FAA;&#x73AF;&#x4EC5;&#x8DE8;&#x8D8A;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x901A;&#x7528;&#x540D;&#x79F0;&#xFF08;&#x5982; i &#x548C; j&#xFF09;&#x7528;&#x4F5C;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x53D8;&#x91CF;&#x3002;&#x5982;&#x679C;&#x60A8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x6574;&#x4E2A;&#x7528;&#x6CD5;&#x8303;&#x56F4;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x542B;&#x4E49;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5C31;&#x5F88;&#x660E;&#x663E;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x957F;&#x540D;&#x79F0;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">for</span>  (i = <span class="hljs-number">0</span>; i &lt; numLines; i++) {
+    ...
+}
+</code></pre>
+<p>It&#x2019;s clear from this code that i is being used to iterate over each of the lines in some entity. If the loop gets so long that you can&#x2019;t see it all at once, or if the meaning of the iteration variable is harder to figure out from the code, then a more descriptive name is in order.</p>
+<blockquote>
+<p>&#x4ECE;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E2D;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x6211;&#x6B63;&#x88AB;&#x7528;&#x6765;&#x8FED;&#x4EE3;&#x67D0;&#x4E2A;&#x5B9E;&#x4F53;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x3002;&#x5982;&#x679C;&#x5FAA;&#x73AF;&#x65F6;&#x95F4;&#x592A;&#x957F;&#xFF0C;&#x4EE5;&#x81F3;&#x4E8E;&#x60A8;&#x65E0;&#x6CD5;&#x4E00;&#x6B21;&#x770B;&#x5230;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#xFF0C;&#x6216;&#x8005;&#x5982;&#x679C;&#x5F88;&#x96BE;&#x4ECE;&#x4EE3;&#x7801;&#x4E2D;&#x627E;&#x51FA;&#x8FED;&#x4EE3;&#x53D8;&#x91CF;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x66F4;&#x5177;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+</blockquote>
+<p>It&#x2019;s also possible for a name to be too specific, such as in this declaration for a method that deletes a range of text:</p>
+<blockquote>
+<p>&#x540D;&#x79F0;&#x4E5F;&#x53EF;&#x80FD;&#x592A;&#x5177;&#x4F53;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x6B64;&#x58F0;&#x660E;&#x4E2D;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8303;&#x56F4;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(Range selection)</span> </span>{...}
+</code></pre>
+<p>The argument name selection is too specific, since it suggests that the text being deleted is always selected in the user interface. However, this method can be invoked on any range of text, selected or not. Thus, the argument name should be more generic, such as range.</p>
+<blockquote>
+<p>&#x53C2;&#x6570;&#x540D;&#x79F0;&#x7684;&#x9009;&#x62E9;&#x8FC7;&#x4E8E;&#x5177;&#x4F53;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5EFA;&#x8BAE;&#x59CB;&#x7EC8;&#x5728;&#x7528;&#x6237;&#x754C;&#x9762;&#x4E2D;&#x9009;&#x62E9;&#x8981;&#x5220;&#x9664;&#x7684;&#x6587;&#x672C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x8303;&#x56F4;&#x7684;&#x6587;&#x672C;&#xFF08;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x9009;&#x4E2D;&#xFF09;&#x4E0A;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x5E94;&#x66F4;&#x901A;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#x8303;&#x56F4;&#x3002;</p>
+</blockquote>
+<p>If you find it difficult to come up with a name for a particular variable that is precise, intuitive, and not too long, this is a red flag. It suggests that the variable may not have a clear definition or purpose. When this happens, consider alternative factorings. For example, perhaps you are trying to use a single variable to represent several things; if so, separating the representation into multiple variables may result in a simpler definition for each variable. The process of choosing good names can improve your design by identifying weaknesses.</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x60A8;&#x53D1;&#x73B0;&#x5F88;&#x96BE;&#x4E3A;&#x7CBE;&#x786E;&#xFF0C;&#x76F4;&#x89C2;&#x4E14;&#x65F6;&#x95F4;&#x4E0D;&#x957F;&#x7684;&#x7279;&#x5B9A;&#x53D8;&#x91CF;&#x547D;&#x540D;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5371;&#x9669;&#x4FE1;&#x53F7;&#x3002;&#x8FD9;&#x8868;&#x660E;&#x8BE5;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x7684;&#x5B9A;&#x4E49;&#x6216;&#x76EE;&#x7684;&#x3002;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x5176;&#x4ED6;&#x56E0;&#x7D20;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E5F;&#x8BB8;&#x60A8;&#x6B63;&#x5728;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x53D8;&#x91CF;&#x6765;&#x8868;&#x793A;&#x51E0;&#x4EF6;&#x4E8B;&#xFF1B;&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x5C06;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#x66F4;&#x7B80;&#x5355;&#x3002;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#x7684;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BC6;&#x522B;&#x5F31;&#x70B9;&#x6765;&#x6539;&#x5584;&#x60A8;&#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
+</blockquote>
+<p>img Red Flag: Hard to Pick Name img</p>
+<p>If it&#x2019;s hard to find a simple name for a variable or method that creates a clear image of the underlying object, that&#x2019;s a hint that the underlying object may not have a clean design.</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x5F88;&#x96BE;&#x4E3A;&#x521B;&#x5EFA;&#x57FA;&#x7840;&#x5BF9;&#x8C61;&#x6E05;&#x6670;&#x56FE;&#x50CF;&#x7684;&#x53D8;&#x91CF;&#x6216;&#x65B9;&#x6CD5;&#x627E;&#x5230;&#x7B80;&#x5355;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x8868;&#x660E;&#x57FA;&#x7840;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
+</blockquote>
+<h2 id="144-use-names-consistently-&#x4E00;&#x81F4;&#x4F7F;&#x7528;&#x540D;&#x79F0;">14.4 Use names consistently &#x4E00;&#x81F4;&#x4F7F;&#x7528;&#x540D;&#x79F0;</h2>
+<p>The second important property of good names is consistency. In any program there are certain variables that are used over and over again. For example, a file system manipulates block numbers repeatedly. For each of these common usages, pick a name to use for that purpose, and use the same name everywhere. For example, a file system might always use fileBlock to hold the index of a block within a file. Consistent naming reduces cognitive load in much the same way as reusing a common class: once the reader has seen the name in one context, they can reuse their knowledge and instantly make assumptions when they see the name in a different context.</p>
+<blockquote>
+<p>&#x540D;&#x8A89;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x91CD;&#x8981;&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x5728;&#x4EFB;&#x4F55;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x90FD;&#x4F1A;&#x53CD;&#x590D;&#x4F7F;&#x7528;&#x67D0;&#x4E9B;&#x53D8;&#x91CF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53CD;&#x590D;&#x64CD;&#x4F5C;&#x5757;&#x53F7;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x79CD;&#x5E38;&#x89C1;&#x7528;&#x6CD5;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8BE5;&#x76EE;&#x7684;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x5728;&#x5404;&#x5904;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x540D;&#x79F0;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x603B;&#x662F;&#x4F7F;&#x7528; fileBlock &#x6765;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x4E2D;&#x5757;&#x7684;&#x7D22;&#x5F15;&#x3002;&#x4E00;&#x81F4;&#x7684;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x4E0E;&#x91CD;&#x7528;&#x666E;&#x901A;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x51CF;&#x8F7B;&#x8BA4;&#x77E5;&#x8D1F;&#x62C5;&#xFF1A;&#x4E00;&#x65E6;&#x8BFB;&#x8005;&#x5728;&#x4E00;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x8BE5;&#x540D;&#x79F0;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x91CD;&#x7528;&#x5176;&#x77E5;&#x8BC6;&#x5E76;&#x5728;&#x4E0D;&#x540C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x770B;&#x5230;&#x8BE5;&#x540D;&#x79F0;&#x65F6;&#x7ACB;&#x5373;&#x505A;&#x51FA;&#x5047;&#x8BBE;&#x3002;</p>
+</blockquote>
+<p>Consistency has three requirements: first, always use the common name for the given purpose; second, never use the common name for anything other than the given purpose; third, make sure that the purpose is narrow enough that all variables with the name have the same behavior. This third requirement was violated in the file system bug at the beginning of the chapter. The file system used block for variables with two different behaviors (file blocks and disk blocks); this led to a false assumption about the meaning of a variable, which in turn resulted in a bug.</p>
+<blockquote>
+<p>&#x4E00;&#x81F4;&#x6027;&#x5177;&#x6709;&#x4E09;&#x4E2A;&#x8981;&#x6C42;&#xFF1A;&#x9996;&#x5148;&#xFF0C;&#x59CB;&#x7EC8;&#x5C06;&#x901A;&#x7528;&#x540D;&#x79F0;&#x7528;&#x4E8E;&#x7ED9;&#x5B9A;&#x76EE;&#x7684;&#xFF1B;&#x7B2C;&#x4E8C;&#xFF0C;&#x9664;&#x4E86;&#x7ED9;&#x5B9A;&#x76EE;&#x7684;&#x5916;&#xFF0C;&#x5207;&#x52FF;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x540D;&#x79F0;&#xFF1B;&#x7B2C;&#x4E09;&#xFF0C;&#x786E;&#x4FDD;&#x76EE;&#x7684;&#x8DB3;&#x591F;&#x72ED;&#x7A84;&#xFF0C;&#x4EE5;&#x4F7F;&#x6240;&#x6709;&#x5177;&#x6709;&#x540D;&#x79F0;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9519;&#x8BEF;&#x4E2D;&#x8FDD;&#x53CD;&#x4E86;&#x6B64;&#x7B2C;&#x4E09;&#x9879;&#x8981;&#x6C42;&#x3002;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x5757;&#x6765;&#x8868;&#x793A;&#x5177;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x884C;&#x4E3A;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x6587;&#x4EF6;&#x5757;&#x548C;&#x78C1;&#x76D8;&#x5757;&#xFF09;&#xFF1B;&#x8FD9;&#x5BFC;&#x81F4;&#x5BF9;&#x53D8;&#x91CF;&#x542B;&#x4E49;&#x7684;&#x9519;&#x8BEF;&#x5047;&#x8BBE;&#xFF0C;&#x8FDB;&#x800C;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;</p>
+</blockquote>
+<p>Sometimes you will need multiple variables that refer to the same general sort of thing. For example, a method that copies file data will need two block numbers, one for the source and one for the destination. When this happens, use the common name for each variable but add a distinguishing prefix, such as srcFileBlock and dstFileBlock.</p>
+<blockquote>
+<p>&#x6709;&#x65F6;&#x60A8;&#x5C06;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x6765;&#x5F15;&#x7528;&#x76F8;&#x540C;&#x7684;&#x4E00;&#x822C;&#x4E8B;&#x7269;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x79CD;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x5757;&#x53F7;&#xFF0C;&#x4E00;&#x4E2A;&#x4E3A;&#x6E90;&#xFF0C;&#x4E00;&#x4E2A;&#x4E3A;&#x76EE;&#x6807;&#x3002;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x8BF7;&#x5BF9;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x540D;&#x79F0;&#xFF0C;&#x4F46;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53EF;&#x533A;&#x5206;&#x7684;&#x524D;&#x7F00;&#xFF0C;&#x4F8B;&#x5982; srcFileBlock &#x548C; dstFileBlock&#x3002;</p>
+</blockquote>
+<p>Loops are another area where consistent naming can help. If you use names such as i and j for loop variables, always use i in outermost loops and j for nested loops. This allows readers to make instant (safe) assumptions about what&#x2019;s happening in the code when they see a given name.</p>
+<blockquote>
+<p>&#x5FAA;&#x73AF;&#x662F;&#x4E00;&#x81F4;&#x6027;&#x547D;&#x540D;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5E2E;&#x52A9;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x3002;&#x5982;&#x679C;&#x5C06;&#x8BF8;&#x5982; i &#x548C; j &#x4E4B;&#x7C7B;&#x7684;&#x540D;&#x79F0;&#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#xFF0C;&#x5219;&#x59CB;&#x7EC8;&#x5728;&#x6700;&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#x4E2D;&#x4F7F;&#x7528; i&#xFF0C;&#x800C;&#x5728;&#x5D4C;&#x5957;&#x5FAA;&#x73AF;&#x4E2D;&#x59CB;&#x7EC8;&#x4F7F;&#x7528; j&#x3002;&#x8FD9;&#x4F7F;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x770B;&#x5230;&#x7ED9;&#x5B9A;&#x540D;&#x79F0;&#x65F6;&#x5BF9;&#x4EE3;&#x7801;&#x4E2D;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x505A;&#x51FA;&#x5373;&#x65F6;&#xFF08;&#x5B89;&#x5168;&#xFF09;&#x5047;&#x8BBE;&#x3002;</p>
+</blockquote>
+<h2 id="145-a-different-opinion-go-style-guide-&#x4E0D;&#x540C;&#x7684;&#x610F;&#x89C1;&#xFF1A;go-&#x6837;&#x5F0F;&#x6307;&#x5357;">14.5 A different opinion: Go style guide &#x4E0D;&#x540C;&#x7684;&#x610F;&#x89C1;&#xFF1A;Go &#x6837;&#x5F0F;&#x6307;&#x5357;</h2>
+<p>Not everyone shares my views about naming. Some of the developers of the Go language argue that names should be very short, often only a single character. In a presentation on name choice for Go, Andrew Gerrand states that &#x201C;long names obscure what the code does.&#x201D;1 He presents this code sample, which uses single-letter variable names:</p>
+<blockquote>
+<p>&#x5E76;&#x975E;&#x6240;&#x6709;&#x4EBA;&#x90FD;&#x540C;&#x610F;&#x6211;&#x5BF9;&#x547D;&#x540D;&#x7684;&#x770B;&#x6CD5;&#x3002;&#x4E00;&#x4E9B;&#x4F7F;&#x7528; Go &#x8BED;&#x8A00;&#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8BA4;&#x4E3A;&#xFF0C;&#x540D;&#x79F0;&#x5E94;&#x8BE5;&#x975E;&#x5E38;&#x7B80;&#x77ED;&#xFF0C;&#x901A;&#x5E38;&#x53EA;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x5728;&#x5173;&#x4E8E; Go &#x7684;&#x540D;&#x79F0;&#x9009;&#x62E9;&#x7684;&#x6F14;&#x793A;&#x4E2D;&#xFF0C;Andrew Gerrand &#x6307;&#x51FA;&#x201C;&#x957F;&#x540D;&#x79F0;&#x6A21;&#x7CCA;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x7528;&#x3002;&#x201D; 1 &#x4ED6;&#x4ECB;&#x7ECD;&#x4E86;&#x6B64;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF0C;&#x8BE5;&#x793A;&#x4F8B;&#x4F7F;&#x7528;&#x5355;&#x5B57;&#x6BCD;&#x53D8;&#x91CF;&#x540D;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> RuneCount(b []<span class="hljs-keyword">byte</span>) <span class="hljs-keyword">int</span> {
+    i, n := <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i &lt; <span class="hljs-built_in">len</span>(b) {
+        <span class="hljs-keyword">if</span> b[i] &lt; RuneSelf {
+            i++
+        } <span class="hljs-keyword">else</span> {
+            _, size := DecodeRune(b[i:])
+            i += size
+        }
+        n++
+    }
+    <span class="hljs-keyword">return</span> n
+}
+</code></pre>
+<p>and argues that it is more readable than the following version, which uses longer names:</p>
+<blockquote>
+<p>&#x5E76;&#x8BA4;&#x4E3A;&#x5B83;&#x6BD4;&#x4EE5;&#x4E0B;&#x4F7F;&#x7528;&#x66F4;&#x957F;&#x540D;&#x79F0;&#x7684;&#x7248;&#x672C;&#x66F4;&#x5177;&#x53EF;&#x8BFB;&#x6027;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> RuneCount(buffer []<span class="hljs-keyword">byte</span>) <span class="hljs-keyword">int</span> {
+    index, count := <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> index &lt; <span class="hljs-built_in">len</span>(buffer) {
+        <span class="hljs-keyword">if</span> buffer[index] &lt; RuneSelf {
+            index++
+        } <span class="hljs-keyword">else</span> {
+            _, size := DecodeRune(buffer[index:])
+            index += size
+        }
+        count++
+    }
+    <span class="hljs-keyword">return</span> count
+}
+</code></pre>
+<p>Personally, I don&#x2019;t find the second version any more difficult to read than the first. If anything, the name count gives a slightly better clue to the behavior of the variable than n. With the first version I ended up reading through the code trying to figure out what n means, whereas I didn&#x2019;t feel that need with the second version. But, if n is used consistently throughout the system to refer to counts (and nothing else), then the short name will probably be clear to other developers.</p>
+<blockquote>
+<p>&#x5C31;&#x4E2A;&#x4EBA;&#x800C;&#x8A00;&#xFF0C;&#x6211;&#x4E0D;&#x89C9;&#x5F97;&#x7B2C;&#x4E8C;&#x7248;&#x6BD4;&#x7B2C;&#x4E00;&#x7248;&#x66F4;&#x96BE;&#x8BFB;&#x3002;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x4E0E; n &#x76F8;&#x6BD4;&#xFF0C;&#x540D;&#x79F0;&#x8BA1;&#x6570;&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x884C;&#x4E3A;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x7EBF;&#x7D22;&#x3002;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x6700;&#x7EC8;&#x901A;&#x8BFB;&#x4E86;&#x4EE3;&#x7801;&#xFF0C;&#x8BD5;&#x56FE;&#x5F04;&#x6E05;&#x695A; n &#x7684;&#x542B;&#x4E49;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7248;&#x672C;&#x4E2D;&#x6211;&#x5E76;&#x6CA1;&#x6709;&#x8FD9;&#x79CD;&#x9700;&#x8981;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E00;&#x81F4;&#x5730;&#x4F7F;&#x7528; n &#x6765;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#xFF08;&#x800C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x5185;&#x5BB9;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x80FD;&#x4F1A;&#x6E05;&#x695A;&#x77E5;&#x9053;&#x8BE5;&#x77ED;&#x540D;&#x79F0;&#x3002;</p>
+</blockquote>
+<p>The Go culture encourages the use of the same short name for multiple different things: ch for character or channel, d for data, difference, or distance, and so on. To me, ambiguous names like these are likely to result in confusion and error, just as in the block example.</p>
+<blockquote>
+<p>Go &#x6587;&#x5316;&#x9F13;&#x52B1;&#x5728;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x7269;&#x4E0A;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x77ED;&#x540D;&#x79F0;&#xFF1A;ch &#x7528;&#x4E8E;&#x5B57;&#x7B26;&#x6216;&#x901A;&#x9053;&#xFF0C;d &#x7528;&#x4E8E;&#x6570;&#x636E;&#xFF0C;&#x5DEE;&#x5F02;&#x6216;&#x8DDD;&#x79BB;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x6A21;&#x68F1;&#x4E24;&#x53EF;&#x7684;&#x540D;&#x79F0;&#x5F88;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6DF7;&#x4E71;&#x548C;&#x9519;&#x8BEF;&#xFF0C;&#x5C31;&#x50CF;&#x5728;&#x793A;&#x4F8B;&#x4E2D;&#x4E00;&#x6837;&#x3002;</p>
+</blockquote>
+<p>Overall, I would argue that readability must be determined by readers, not writers. If you write code with short variable names and the people who read it find it easy to understand, then that&#x2019;s fine. If you start getting complaints that your code is cryptic, then you should consider using longer names (a Web search for &#x201C;go language short names&#x201D; will identify several such complaints). Similarly, if I start getting complaints that long variable names make my code harder to read, then I&#x2019;ll consider using shorter ones.</p>
+<blockquote>
+<p>&#x603B;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x8BA4;&#x4E3A;&#x53EF;&#x8BFB;&#x6027;&#x5FC5;&#x987B;&#x7531;&#x8BFB;&#x8005;&#x800C;&#x4E0D;&#x662F;&#x4F5C;&#x5BB6;&#x6765;&#x51B3;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7B80;&#x77ED;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x9605;&#x8BFB;&#x8BE5;&#x4EE3;&#x7801;&#x7684;&#x4EBA;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#x5F88;&#x597D;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5F00;&#x59CB;&#x62B1;&#x6028;&#x4EE3;&#x7801;&#x5F88;&#x542B;&#x7CCA;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x66F4;&#x957F;&#x7684;&#x540D;&#x79F0;&#xFF08;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x641C;&#x7D22;&#x201C; go language short name&#x201D;&#xFF08;&#x4F7F;&#x7528;&#x8BED;&#x8A00;&#x7B80;&#x79F0;&#xFF09;&#x4F1A;&#x8BC6;&#x522B;&#x51FA;&#x51E0;&#x79CD;&#x6B64;&#x7C7B;&#x62B1;&#x6028;&#xFF09;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x5F00;&#x59CB;&#x62B1;&#x6028;&#x957F;&#x53D8;&#x91CF;&#x540D;&#x4F7F;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x96BE;&#x4EE5;&#x9605;&#x8BFB;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4F1A;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x8F83;&#x77ED;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x3002;</p>
+</blockquote>
+<p>Gerrand makes one comment that I agree with: &#x201C;The greater the distance between a name&#x2019;s declaration and its uses, the longer the name should be.&#x201D; The earlier discussion about using loop variables named i and j is an example of this rule.</p>
+<blockquote>
+<p>Gerrand &#x53D1;&#x8868;&#x4E00;&#x4E2A;&#x6211;&#x540C;&#x610F;&#x7684;&#x8BC4;&#x8BBA;&#xFF1A;&#x201C;&#x540D;&#x79F0;&#x58F0;&#x660E;&#x4E0E;&#x4F7F;&#x7528;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x8D8A;&#x5927;&#xFF0C;&#x540D;&#x79F0;&#x5C31;&#x5E94;&#x8BE5;&#x8D8A;&#x957F;&#x3002;&#x201D; &#x524D;&#x9762;&#x6709;&#x5173;&#x4F7F;&#x7528;&#x540D;&#x4E3A; i &#x548C; j &#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x7684;&#x8BA8;&#x8BBA;&#x662F;&#x6B64;&#x89C4;&#x5219;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+</blockquote>
+<h2 id="146-conclusion-&#x7ED3;&#x8BBA;">14.6 Conclusion &#x7ED3;&#x8BBA;</h2>
+<p>Well chosen names help to make code more obvious; when someone encounters the variable for the first time, their first guess about its behavior, made without much thought, will be correct. Choosing good names is an example of the investment mindset discussed in Chapter 3: if you take a little extra time up front to select good names, it will be easier for you to work on the code in the future. In addition, you will be less likely to introduce bugs. Developing a skill for naming is also an investment. When you first decide to stop settling for mediocre names, you may find it frustrating and time-consuming to come up with good names. However, as you get more experience you&#x2019;ll find that it becomes easier; eventually, you&#x2019;ll get to the point where it takes almost no extra time to choose good names, so you will get the benefits almost for free.</p>
+<blockquote>
+<p>&#x7CBE;&#x5FC3;&#x9009;&#x62E9;&#x7684;&#x540D;&#x79F0;&#x6709;&#x52A9;&#x4E8E;&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x660E;&#x663E;&#x3002;&#x5F53;&#x67D0;&#x4EBA;&#x7B2C;&#x4E00;&#x6B21;&#x9047;&#x5230;&#x8BE5;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4ED6;&#x4EEC;&#x5BF9;&#x884C;&#x4E3A;&#x7684;&#x7B2C;&#x4E00;&#x6B21;&#x731C;&#x6D4B;&#x662F;&#x6B63;&#x786E;&#x7684;&#x3002;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#x662F;&#x7B2C; 3 &#x7AE0;&#x8BA8;&#x8BBA;&#x7684;&#x6295;&#x8D44;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;&#x7684;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;&#x5982;&#x679C;&#x60A8;&#x82B1;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x6765;&#x60A8;&#x5C06;&#x66F4;&#x5BB9;&#x6613;&#x5904;&#x7406;&#x4EE3;&#x7801;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x5F15;&#x5165;&#x9519;&#x8BEF;&#x3002;&#x57F9;&#x517B;&#x547D;&#x540D;&#x6280;&#x5DE7;&#x4E5F;&#x662F;&#x4E00;&#x9879;&#x6295;&#x8D44;&#x3002;&#x5F53;&#x60A8;&#x7B2C;&#x4E00;&#x6B21;&#x51B3;&#x5B9A;&#x505C;&#x6B62;&#x4E3A;&#x5E73;&#x5EB8;&#x7684;&#x540D;&#x5B57;&#x5B9A;&#x5C45;&#x65F6;&#xFF0C;&#x60A8;&#x4F1A;&#x53D1;&#x73B0;&#x60F3;&#x51FA;&#x597D;&#x540D;&#x5B57;&#x7684;&#x8FC7;&#x7A0B;&#x65E2;&#x4EE4;&#x4EBA;&#x6CAE;&#x4E27;&#x53C8;&#x8017;&#x65F6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x968F;&#x7740;&#x60A8;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;&#x60A8;&#x4F1A;&#x53D1;&#x73B0;&#x5B83;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x60A8;&#x5C06;&#x51E0;&#x4E4E;&#x4E0D;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x9009;&#x62E9;&#x597D;&#x540D;&#x5B57;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x83B7;&#x5F97;&#x597D;&#x5904;&#x3002;</p>
+</blockquote>
+<p>1<a href="https://talks.golang.org/2014/names.slide#1" target="_blank">https://talks.golang.org/2014/names.slide#1</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch13.html" class="navigation navigation-prev " aria-label="Previous page: 第十三章: 注释应该描述代码中不明显的内容">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ch15.html" class="navigation navigation-next " aria-label="Next page: 第十五章: 先写注释">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第十四章: 选择的名字","level":"1.17","depth":1,"next":{"title":"第十五章: 先写注释","level":"1.18","depth":1,"path":"docs/ch15.md","ref":"./docs/ch15.md","articles":[]},"previous":{"title":"第十三章: 注释应该描述代码中不明显的内容","level":"1.16","depth":1,"path":"docs/ch13.md","ref":"./docs/ch13.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters-small","page-toc-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"John Ousterhout","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"软件设计哲学","language":"zh-hans","gitbook":"*","description":"书中讨论了软件设计的主题：如何将复杂的软件系统分解成可以相对独立实现的模块(如类和方法)"},"file":{"path":"docs/ch14.md","mtime":"2020-08-06T16:26:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-06T04:55:41.669Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
